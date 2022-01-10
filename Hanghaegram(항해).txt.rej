@@ -1,9 +1,0 @@
-diff a/Hanghaegram(항해).txt b/Hanghaegram(항해).txt	(rejected hunks)
-@@ -3,4 +3,5 @@
- 바꿔보겠습니다!
- 한번더!
- 이것은 로컬에서 작업한것
--커밋실험
-\ No newline at end of file
-+커밋실험
-+충돌실험
