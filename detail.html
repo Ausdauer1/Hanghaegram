@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+    <!-- Webpage Title -->
+    <title>항해그램</title>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bulma CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <!-- 부트스트랩 CSS-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='{{ url_for("static", filename="basic_style.css") }}' rel="stylesheet">
+
+    <!-- Google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dongle&display=swap" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.js"></script>
+
+    <script>
+        function openClose() {
+                if ($("#post-box").css("display") == "block") {
+                    $("#post-box").hide();
+                    $("#openclose-button").text("게시물 작성");
+                } else {
+                    $("#post-box").show();
+                    $("#openclose-button").text("작성칸 닫기");
+                }
+            }
+        function postArticle() {
+
+            let name = $('#post-name').val()
+            let comment = $('#post-comment').val()
+
+            if (name == '') {
+                alert('이름을 입력하세요!')
+                return
+            } else {
+                $.ajax({
+                    type: "POST",
+                    url: "/detail/posts",
+                    data: {name_give:name, comment_give:comment},
+                    success: function (response) { // 성공하면
+                        alert(response["msg"]);
+                        window.location.reload()
+                    }
+                })
+            }
+            }
+    </script>
+    <style>
+        .card-deck {
+            margin: 30px auto auto auto;
+            width: 25%;
+        }
+        .form-post {
+            margin-top: 40px;
+        }
+
+    </style>
+</head>
+<body>
+            <!-- 타이틀 부분 -->
+    <section class="hero banner_title">
+        <div class="hero-body has-text-centered" style="padding-bottom:1rem;margin:auto;">
+            <div>
+                <h1 class="title" onclick="reload()">Hanghaegram</h1>
+                <h3 class="subtitle">우리의 에피소드</h3>
+            </div>
+            <div>
+                 <button id='openclose-button' onclick="openClose()" type="button" class="btn btn-outline-primary">게시물 작성</button>
+            </div>
+            <div id="post-box" class="form-post" style="display:none">
+                <div>
+                    <div class="form-group">
+                        <input id="post-name" class="form-control" placeholder="이름입력">
+                    </div>
+                    <div class="form-group">
+                        <textarea id="post-comment" class="form-control" rows="2" placeholder="코멘트 작성"></textarea>
+                    </div>
+                     <div class="form-group" >
+                        <input type="file" id="real-input" class="image_inputType_file" accept="img/*" required multiple>
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="postArticle()">업로드!</button>
+                </div>
+            </div>
+        </div>
+    </section>
+            {% for article in articles %}
+            <div class="card-wrap">
+                <div class="card-deck" style="float: left;">
+                    <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3">
+                                <img src="https://bulma.io/images/placeholders/1280x960.png" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="content">
+                                <p class="uploader" style="font-weight: bold">작성자:{{article.name}}</p>
+                                <p class="comment">{{ article.comment }}</p>
+                                <time datetime="2016-1-1" style="color:blue;">업로드 시간 : {{ article.upload_time }}</time>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+</body>
+</html>
