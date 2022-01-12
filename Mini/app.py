@@ -7,8 +7,8 @@ app = Flask(__name__)
 client = MongoClient('13.209.87.2', 27017, username="test", password="test")
 db = client.hanghaegram
 
-@app.route('/')
-def main():
+@app.route('/categories')
+def category():
     return render_template("categories_index.html")
 
 @app.route('/pet')
