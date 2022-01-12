@@ -58,27 +58,6 @@
             // {% if msg %}
                 //     alert("{{ msg }}")
                 // {% endif %}
-            function sign_in() {
-                $.ajax({
-                    type: "POST",
-                    url: "/sign_in",
-                    data: {
-                        username_give: "",
-                        password_give: ""
-                    },
-                    success: function (response) {
-                        if (response['result'] == 'success') {
-                            $.cookie('mytoken', response['token'], {path: '/'});
-
-                            alert('로그인 완료!')
-                            window.location.href = '/'
-                        } else {
-                            // 로그인이 안되면 에러메시지를 띄웁니다.
-                            alert(response['msg'])
-                        }
-                    }
-                })
-            }
 
             function sign_up() {
                 let username = ""
@@ -260,7 +239,7 @@
                                     <button class="level-item button is-sparta" onclick="sign_up()">
                                         가입
                                     </button>
-                                    <button class="level-item button is-outlined" onclick="">
+                                    <button class="level-item button is-outlined" onclick="history.go(-1)">
                                         취소
                                     </button>
                                 </nav>
