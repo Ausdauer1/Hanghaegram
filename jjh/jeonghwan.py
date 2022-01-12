@@ -76,28 +76,6 @@ def check_dup():
     return jsonify({'result': 'success', 'exists': exists})
 
     # 카테고리 모음
-@app.route('/categories/life')
-def life():
-    return render_template("food.html")
-
-@app.route('/categories/sports')
-def sports():
-    return render_template("daily.html")
-
-@app.route('/categories/travel')
-def travel():
-    return render_template("pet.html")
-
-@app.route('/categories/food')
-def food():
-    return render_template("exercise.html")
-
-@app.route('/categories/pet')
-def pet():
-    return render_template("trap.html")
-
-
-
 
 
 @app.route('/pet')
@@ -135,6 +113,7 @@ def saving():
     }
 
     db.pet.insert_one(doc)
+    print(doc)
 
     return jsonify({'msg': '정상적으로 저장되었습니다.'})
 
