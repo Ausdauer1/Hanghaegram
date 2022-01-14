@@ -74,6 +74,6 @@
 
 #### 지정환&nbsp;:
 
-#### 최성원&nbsp;:
+#### 최성원&nbsp;: https://velog.io/@tjddnjs7057/%ED%95%AD%ED%95%B499-5%EA%B8%B0-A%EB%B0%98-1%EC%A1%B0-%EB%AF%B8%EB%8B%88%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8-D1
 
 #### 박정희&nbsp;:
