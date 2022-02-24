@@ -41,10 +41,10 @@
 <H3> Back-End </H3>
 
 <H4>
-  <img src:"https://img.shields.io/badge/selenium-41454A?style=for-the-badge&logo=selenium&logoColor=white">&nbsp;
-  <img src:"https://img.shields.io/badge/.env-FFE005?style=for-the-badge&logo=.env&logoColor=white">&nbsp;
-  <img src:"https://img.shields.io/badge/cors-55C2E1?style=for-the-badge&logo=cors&logoColor=white">&nbsp;
-  <img src:"https://img.shields.io/badge/prettier-360D3A?style=for-the-badge&logo=prettier&logoColor=white">&nbsp;
+  <img src="https://img.shields.io/badge/selenium-41454A?style=for-the-badge&logo=selenium&logoColor=white">&nbsp;
+  <img src="https://img.shields.io/badge/.env-FFE005?style=for-the-badge&logo=.env&logoColor=white">&nbsp;
+  <img src="https://img.shields.io/badge/cors-55C2E1?style=for-the-badge&logo=cors&logoColor=white">&nbsp;
+  <img src="https://img.shields.io/badge/prettier-360D3A?style=for-the-badge&logo=prettier&logoColor=white">&nbsp;
 </H4> </br>
 
 <H1> API 명세서 </H1>
