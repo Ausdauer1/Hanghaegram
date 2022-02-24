@@ -88,6 +88,14 @@
     * [뷰] 로그인, 회원가입, 메인 페이지(신상품), 베스트, 알뜰쇼핑, 특가/혜택, 장바구니
     * [기능] 회원가입, 메인페이지 부분(배너 슬라이드), 신상품 페이지 크롤링 제품들 보여주기, 장바구니 수정, 장바구니 삭제
 </details>
+
+ <details>
+    <summary>우재현</summary>
+
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+  
+    * [기능] Selenium으로 마켓컬리 홈페이지의 상품들을 크롤링 하여 DB에 넣어주기, 메인페이지에서 DB의 내용 카테고리에 맞게 넘겨주기
+</details>
     </br>
     
 <H1>💡Trouble Shooting</H1>    
@@ -111,6 +119,15 @@
     After) setCurrrentPrice(parseInt(price.replace(/,/g, "")) * (quantity + 1));
     
 </details> </br>
+
+<details>
+    <summary> Cheerio와 Axios로 마켓컬리 페이지 크롤링을 실패해서, Selenium과 Chromedriver를 이용한 동적 크롤링으로 문제 해결</summary>
+
+<!-- summary 아래 한칸 공백 두고 내용 삽입 -->
+    Cheerio와 Axios를 이용한 크롤링을 처음에 시도 했는데 계속해서 null 값 혹은 빈 배열을 가져왔다.
+    그래서 다른 크롤링 방식인 Selenium을 사용해서 값을 받아오는 것을 성공하였고, 동적 크롤링이 가능해 여러페이지의 정보를 자동으로 가져 올 수 있게 되었다.
+    
+</details>
 
 <H1>🗣 &nbsp;느낀점 </H1>
    <details>
